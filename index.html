@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foodball Formation Planner</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js" integrity="sha512-BNaRQnYJYiPSqHHDb58B0yaPfCu+Wgds8Gp/gU33kqBtgNS4tSPHuGibyoeqMV/TJlSKda6FXzoEyYGjTe+vXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+    <h1>⚽Tactical Formation Planner</h1>
+
+    <h2>Add New Player</h2>
+    <form action="" id="playerForm">
+      <input type="text" id="playerName" placeholder="Player Name" required>
+      <select id="playerPosition" required>
+        <option value="">Select Position</option>
+        <option value="Goalkeeper">Goalkeeper</option>
+        <option value="Striker">Striker</option>
+        <option value="Midfielder">Midfielder</option>
+        <option value="Defender">Defender</option>
+      </select>
+
+      <select id="playerCountry" required>
+        <option value="">Select Country</option>
+        <option value="🇧🇩">🇧🇩 Bangladesh</option>
+        <option value="🇮🇳">🇮🇳 India</option>
+        <option value="🇵🇰">🇵🇰 Pakistan</option>
+        <option value="🇳🇵">🇳🇵 Nepal</option>
+        <option value="🇻🇳">🇻🇳 Vietnam</option>
+        <option value="🇹🇷">🇹🇷 Turkey</option>
+        <option value="🇲🇲">🇲🇲 Myanmer</option>
+      </select>
+
+      <!-- <input type="file" id="playerImage" accept="image/*"  /> -->
+      <button type="submit">Add Player</button>
+    </form>
+
+  <div id="formationContainer">
+      <div class="field" id="field">
+        <!-- goals -->
+         <div class="goal left"></div>
+         <div class="goal right"></div>
+        <!-- D-boxes -->
+         <div class="dbox left"></div>
+         <div class="dbox right"></div>
+        <!-- Midline -->
+         <div class="midline"></div>
+        <!-- Center circle -->
+         <div class="center-circle"></div>
+          <!-- <div class="player striker" id="player-1" draggable="true" style="left: 300px; top: 80px">
+            <p><strong>Messi</strong></p>
+            <p>(Striker)</p>
+            <p class="country">🇦🇷</p>
+            <button class="delete-btn">❌</button>
+          </div> -->
+    </div>
+
+    <h2>Bench / Substitutes</h2>
+    <div class="bench" id="bench"></div>
+  </div>
+
+    <button id="exportBtn">Export Formation as Image</button>
+    <script src="index.js"></script>
+</body>
+</html>
+
+
+<!-- part 1 -setup project and football field layout -->
+<!-- part 2 - Display static players -->
+<!-- part 3 - Make Players draggable -->
+<!-- part 4 - Add Players -->
+<!-- part 5 - Delete players -->
+<!-- part 6 - Save and Load data from localstorage -->
+<!-- part 7 - Export Image using html2canvas -export dom as image by html2canvas-->
+<!-- part 8 - Bench/Substitute area -->
+<!-- part 9 - Future improvement: Minimap view -->

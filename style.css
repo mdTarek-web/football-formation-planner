@@ -1,0 +1,293 @@
+body{
+    font-family: Arial, sans-serif;
+    background: #222;
+    color: #fff;
+    text-align: center;
+    margin: 0;
+    padding:  20px;
+}
+h1{
+    margin-bottom: 20px;
+    font-size: 2rem;
+}
+.field {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    aspect-ratio: 2 / 1;
+    margin: auto;
+    background-color: #0b6623;
+    border: 4px solid white;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+/* // Goals */
+.goal{
+    position: absolute;
+    width: 10px;
+    height: 80px;
+    background: #fff;
+    top: calc(50% - 40px);
+    /* z-index: 1; */
+}
+.goal.left{
+    left: 0;
+}
+.goal.right{
+    right: 0;
+}
+/* D-boxes */
+.dbox{
+    position: absolute;
+    width: 100px;
+    height: 180px;
+    border: 2px solid white;
+    top: calc(50% - 90px);
+    /* z-index: 1; */
+}
+.dbox.left{
+    left: 0;
+}
+.dbox.right{
+    right: 0;
+}
+
+/* Midfield line */
+.midline{
+    position: absolute;
+    width: 2px;
+    height: 100%;
+    background: white;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Center circle */
+.center-circle{
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border: 2px solid white;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* static player design */
+.player{
+    position: absolute;
+    width: 90px;
+    padding: 5px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 10px;
+    cursor: grab;
+    z-index: 2;
+}
+.player img{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.player.striker{
+    background-color: #e74c3c;
+}
+.player.midfielder{
+    background-color: #2980b9;
+}
+.player.defender{
+    background-color: #27ae60;
+}
+.player.goalkeeper{
+    background-color: #8827ae;
+}
+
+.player p {
+    margin: 1px 0;
+    font-size: 12px;
+    color: #000;
+}
+.player .country{
+    font-size: 1.5rem;
+}
+
+/* Add player style */
+form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+form input, form select, form button{
+    padding: 8px;
+    border-radius: 5px;
+    font-size: 14px;
+    border: none;
+}
+form button{
+    background-color: #27ae60;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+form button:hover{
+    background-color: #1e8449;
+}
+.player .delete-btn{
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+    border : none;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    line-height: 18px;
+    text-align: center;
+    cursor: pointer;
+    z-index: 5;
+    transition: background 0.3s;
+}
+.player .delete-btn:hover {
+    background: rgba(51, 255, 0, 0.753);
+}
+
+/* export dom as image by html2canvas */
+#exportBtn{
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #00b894;
+    color: white;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+#exportBtn:hover {
+    background-color: #019875;
+}
+
+/* bench area style */
+.bench {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    padding: 10px;
+    background-color: #444;
+    margin-top: 20px;
+    width: 100%;
+    min-height: 100px;
+    border-radius: 10px;
+    border: 2px solid #fff;
+}
+.bench .player {
+    position: relative !important;
+    left: unset !important;
+    top: unset !important;
+}
+
+.bench.hovered {
+  background-color: #444;
+  outline: 3px dashed #f39c12;
+}
+
+/* Formation Container */
+#formationContainer{
+    max-width: 1000px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#formationContainer h2{
+    color: #019875;
+}
+
+
+@media (max-width: 768px) {
+  form {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .field {
+    width: 100%;
+    aspect-ratio: 3 / 2;
+    border-width: 2px;
+  }
+
+  .goal {
+    width: 6px;
+    height: 50px;
+    top: calc(50% - 25px);
+  }
+
+  .dbox {
+    width: 30px;
+    height: 120px;
+    top: calc(50% - 60px);
+    border-width: 1px;
+  }
+
+  .center-circle {
+    width: 60px;
+    height: 60px;
+    border-width: 1px;
+  }
+
+  .midline {
+    width: 1px;
+  }
+
+  .player {
+    width: 60px;
+    padding: 12px 2px 2px;
+    font-size: 11px;
+  }
+
+  .player p {
+    font-size: 11px;
+    margin: 1px 0;
+  }
+
+  .player .country {
+    font-size: 1rem;
+  }
+
+  .player .position {
+    display: none;
+  }
+
+  .delete-btn {
+    width: 14px;
+    height: 14px;
+    font-size: 10px;
+    top: 2px;
+    right: 2px;
+  }
+
+  .bench {
+    padding: 10px;
+    border-width: 2px;
+  }
+
+  #exportBtn {
+    width: fit-content;
+    font-size: 13px;
+    padding: 8px 16px;
+  }
+}
